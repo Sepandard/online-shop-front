@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { environment } from 'src/configs/environment';
 import { Product } from 'src/models/products';
 import { ProductsService } from '../../shared/products.service';
 
@@ -8,19 +10,35 @@ import { ProductsService } from '../../shared/products.service';
   styleUrls: ['./product-detail.component.css'],
 })
 export class ProductDetailComponent implements OnInit {
-  url: String = '';
-  selectedProduct:any;
-  constructor(private productSrv: ProductsService) {}
+  selectedProduct: any;
+  IMAGE_URL: string = environment.IMAGE_URL;
+  pending : boolean = false;
+  constructor(
+    private productSrv: ProductsService,
+    private activeRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    let productIdArr: any[] = [];
+    this.getProduct();
+  }
+  showReadMore: boolean = false;
+  minimize: boolean = false;
 
-    this.url = window.location.href;
-    productIdArr = this.url.split('=');
-
-    this.productSrv.fakeData.forEach((element) => {
-      if (element.prodcutId == productIdArr[1]) {
-        this.selectedProduct = element;
+  getProduct() {
+    this.pending = true
+    const { Id } = this.activeRoute.snapshot.queryParams;
+    this.productSrv.searchProductID(Id).subscribe(({ data }: any) => {
+      if (data) {
+        this.selectedProduct = new Product(data.Product[0]);
+        console.log(this.selectedProduct);
+        const lines =
+          (data.Product[0].productdescription.match(/\n/g) || '').length + 1;
+        console.log(lines);
+        if (lines > 5) {
+          this.showReadMore = true;
+          this.minimize = true;
+        }
+        this.pending = false
       }
     });
   }
