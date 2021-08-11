@@ -31,6 +31,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { AdminService } from './shared/admin.service';
 import { BaseService } from 'shared/base-service.service';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
 @NgModule({
   declarations: [
     AdminLayoutComponent,
@@ -40,6 +41,7 @@ import { BaseService } from 'shared/base-service.service';
     AdminNavbarComponent,
     ButtonRendererComponent,
     DeleteDailogComponent,
+    ProductEditComponent,
   ],
   imports: [
     CommonModule,

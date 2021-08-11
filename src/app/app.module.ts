@@ -8,15 +8,14 @@ import { FormlyModule } from '@ngx-formly/core';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
-import {  HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ClassProvider } from '@angular/core';
-import { AuthGuard } from 'src/shared/auth.guard';
-
-const HTTP_AUTH_GUARD : ClassProvider = {
+import { AuthGuard } from './shared/guards/auth.guard';
+const HTTP_AUTH_GUARD: ClassProvider = {
   provide: HTTP_INTERCEPTORS,
-  useClass: AuthGuard ,
-  multi:true 
-}
+  useClass: AuthGuard,
+  multi: true,
+};
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -29,7 +28,7 @@ const HTTP_AUTH_GUARD : ClassProvider = {
     HttpClientModule,
     FormlyModule.forRoot({ extras: { lazyRender: true } }),
   ],
-  providers : [HTTP_AUTH_GUARD],
+  providers: [HTTP_AUTH_GUARD],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
