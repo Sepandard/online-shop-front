@@ -20,6 +20,8 @@ import { ProfileEditComponent } from './components/profile/profile-edit/profile-
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BaseService } from 'shared/base-service.service';
 import { ProductsService } from './shared/products.service';
+import { PipesModule } from '../shared/pipes/pipes.module';
+import {MatTooltipModule} from '@angular/material/tooltip';
 @NgModule({
   declarations: [
     ProductCardComponent,
@@ -38,6 +40,7 @@ import { ProductsService } from './shared/products.service';
     MatButtonModule,
     MatMenuModule,
     MatIconModule,
+    MatTooltipModule,
     ReactiveFormsModule,
     FormlyModule.forRoot({
       validationMessages: [
@@ -51,6 +54,9 @@ import { ProductsService } from './shared/products.service';
     FormlyMaterialModule,
     MatTabsModule,
     MatSnackBarModule,
+    PipesModule,
+
+    
   ],
   providers: [BaseService, ProductsService],
 })
