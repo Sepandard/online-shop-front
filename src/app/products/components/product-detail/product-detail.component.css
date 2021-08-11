@@ -1,4 +1,69 @@
 .header-image {
-  width: 100%;
+  width: 100vh;
+  height: 100vh;
+}
+.prod-img {
+  height: 90vh;
+  width: auto;
+  position: static;
+}
+.d-grid {
+  display: grid;
+}
+
+.mt-6 {
+  margin-top: 3rem;
+}
+.prod-category {
+  font-family: "Raleway", sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: #37353870;
+}
+.prod-name {
+  font-size: 50px;
+  color: #373538;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+}
+.prod-price {
+  font-family: "Comfortaa", cursive;
+  font-size: 40px;
+  margin-top: 4rem;
+  font-weight: 900;
+  color: #161616cc;
+}
+.prod-desc {
+  margin-top: 2.5rem;
+  color: #01263a;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  opacity: 0.8;
+}
+.limitTextHeight {
+  height: 20vh;
+  overflow: hidden;
+  transition: height 2s;
+}
+.unlimitTextHeight {
   height: auto;
+}
+
+.read-more {
+  float: right;
+  text-decoration: underline;
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.wrapper {
+  margin-top: 3rem;
+  margin-left: 4rem;
+}
+.add-btn{
+  background-color: #F8D210;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
 }

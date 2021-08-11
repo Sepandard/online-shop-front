@@ -1,0 +1,68 @@
+
+
+<div class="container">
+    <mat-card class="mt-5-5">
+      <form [formGroup]="addProductform" (ngSubmit)="onSubmit()" class="mt-4">
+        <formly-form
+          [model]="addProductformModel"
+          [fields]="addProductformConfig"
+          [form]="addProductform"
+        ></formly-form>
+        <button
+          class="mr-2"
+          mat-raised-button
+          color="warn"
+          (click)="onRestForm()"
+        >
+          Clear
+          <mat-icon>clear</mat-icon>
+        </button>
+        <!-- uploader -->
+        <div class="mt-1 mb-1">
+          <input
+            class="d-none"
+            type="file"
+            #fileInput
+            (change)="onSelectFile($event)"
+          />
+          <button
+            class="green-color"
+            mat-raised-button
+            type="button"
+            dir="rtl"
+            (click)="fileInput.click()"
+            *ngIf="!showProgress"
+          >
+          <mat-icon class="ticket-form-icon">insert_photo</mat-icon>
+  
+            Upload photo
+          </button>
+          <mat-progress-bar
+            class="mt-2"
+            mode="indeterminate"
+            *ngIf="showProgress"
+          ></mat-progress-bar>
+        </div>
+  
+        <button
+          type="submit"
+          mat-raised-button
+          color="primary"
+          [disabled]="addProductform.invalid || showProgress || !fileUploaded"
+        >
+          Submit
+          <mat-icon>add</mat-icon>
+        </button>
+     
+      </form>
+      <mat-card class="image-class">
+        <img
+              mat-card-image
+              src="{{IMAGE_URL +product.image_name}}"
+              alt="Photo of a Shiba Inu"
+            />
+      </mat-card>
+      
+    </mat-card>
+  </div>
+

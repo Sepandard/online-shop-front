@@ -1,26 +1,40 @@
-<mat-card class="m-3">
-  <div class="row">
-    <div class="col-lg-6 col-md-12">
-      <img
-        mat-card-image
-        class="header-image ml-2"
-        src="{{ selectedProduct.ProductImageUrl }}"
-        alt=""
-      />
-      <h1>{{ selectedProduct.priceProduct }}</h1>
-    </div>
-    <div class="col-lg-6 col-md-12">
-      <div>
-        <mat-card-content>
-          <p>
-            {{ selectedProduct.descriptionProduct }}
-          </p>
-        </mat-card-content>
-        <button mat-button>Add</button>
+<div class="row pt-4">
+  <div class="col-lg-5 col-md-12 wrapper">
+    <img
+      *ngIf="!pending"
+      class="prod-img"
+      mat-card-image
+      src="{{ IMAGE_URL + selectedProduct.image_name }}"
+    />
+  </div>
+  <div class="col-lg-6 col-md-12">
+    <div class="d-grid mt-6">
+    
+      <p class="prod-name p-0">
+        {{ selectedProduct.productname }}
+      </p>
+      <span class="prod-category">
+        {{ selectedProduct.categoryproductname }}</span
+      >
+      <p class="prod-price">{{ selectedProduct.productprice }}</p>
+      <button mat-button class="col-lg-3 col-md-12 mt-4 add-btn">
+        ADD TO CART <mat-icon>add_shopping_cart</mat-icon>
+      </button>
+      <p class="prod-desc" [ngClass]="{ limitTextHeight: minimize   }">
+        {{ selectedProduct.productdescription }}
+      </p>
+
+      <div *ngIf="showReadMore">
+        <span class="read-more" *ngIf="minimize" (click)="minimize = !minimize"
+          >Read More
+        </span>
+        <span class="read-more" *ngIf="!minimize" (click)="minimize = !minimize"
+          >Minimize
+        </span>
       </div>
     </div>
-    <div>
-      <mat-card-actions> </mat-card-actions>
-    </div>
   </div>
-</mat-card>
+  <div>
+    <mat-card-actions> </mat-card-actions>
+  </div>
+</div>

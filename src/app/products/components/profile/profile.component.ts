@@ -25,18 +25,16 @@ export class ProfileComponent implements OnInit {
     this.getPersonalInformation();
   }
   getPersonalInformation() {
-    let PersonalData;
     this.productSrv
       .getPersonal(localStorage.getItem('user_id'))
       .subscribe((data: any) => {
         this.pending = true;
-        this.profileDetail = PersonalData = new User(data.data[0].user[0]);
-
+        this.profileDetail =  new User(data.data[0].user[0]);
         this.profileData = [
           { filedLabel: 'name', fieldData: this.profileDetail.user_nickname },
           { filedLabel: 'Email', fieldData: this.profileDetail.user_email },
-          { filedLabel: 'Gender', fieldData: this.profileDetail.user_gender },
-          { filedLabel: 'Role', fieldData: this.profileDetail.user_roleid },
+          { filedLabel: 'Gender', fieldData: this.profileDetail.gender_name  },
+          { filedLabel: 'Role', fieldData: this.profileDetail.user_roleid == 2 ? 'Customer' : 'Admin' },
         ];
       });
   }

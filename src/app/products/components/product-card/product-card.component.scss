@@ -1,0 +1,115 @@
+.card-img {
+  min-height: 400px;
+  max-height: 215px;
+  object-fit: cover;
+  height: 384px;
+  border-radius: 3px;
+  border: 0;
+}
+
+.detail-card {
+  height: 125px;
+  background-color: #fff;
+  position: absolute;
+  top: 312px;
+  width: -webkit-fill-available;
+  border: 0;
+  border-radius: 3px;
+  transition: height 0.5s, top 0.5s;
+}
+.hover-bg-color {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  transition: 0.5s ease;
+}
+.view-more {
+  display: none;
+}
+.prod-price {
+  float: right;
+  padding: 24px 10px 0 0;
+  font-family: "Comfortaa", cursive;
+  font-size: 16px;
+  font-weight: 900;
+  color: #000000;
+  transition: 0.5s ease;
+  font-weight: 900;
+  font-size: larger;
+  margin-right: auto;
+}
+.prod-name {
+  font-size: 20px;
+  color: #373538;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+  float: left;
+  padding: 15px 0px 0px 15px;
+  cursor: pointer;
+}
+.prod-category {
+  transition: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  color: #37353870;
+  display: none;
+  transition: 0.1s ease;
+  margin-left: 15px;
+}
+
+.card:hover {
+  .detail-card {
+    top: 200px;
+    height: 240px;
+  }
+  .hover-bg-color {
+    background-color: #373538b0;
+    border-radius: 3px;
+  }
+  .view-more {
+    cursor: pointer;
+    display: inline;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+    border: 6px solid white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    width: 70%;
+    border-radius: 2px;
+    font-family: "Open Sans", sans-serif;
+    transition: 0.5s ease;
+  }
+  .view-more:hover {
+    background-color: white;
+    color: #373538b0;
+    font-weight: bold;
+  }
+  .prod-price {
+    margin-top: 2rem;
+    font-weight: 1000;
+    font-size: larger;
+  }
+  .prod-category {
+    display: block;
+  }
+  .add-btn {
+    display: block;
+  }
+}
+.add-btn {
+  background-color: #f8d210;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 10px;
+  display: none;
+  margin-top: 2.6rem;
+  transition: 0.1s ease;
+}
