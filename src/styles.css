@@ -1,6 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./style/formly.css";
-
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&family=Roboto+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Open+Sans+Condensed:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
 
 html,
 body {
@@ -10,6 +15,7 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   overflow-x: hidden;
+  background-color: whitesmoke
 }
 
   /* width */
