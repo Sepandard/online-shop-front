@@ -78,5 +78,7 @@ export class ProductsService {
       }
     });
   }
-
+  searchProductID(Id:number){
+   return this.baseSrv.getReq('product/searchProductID','productid',Id)
+  }
  }
